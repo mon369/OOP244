@@ -1,0 +1,18 @@
+1. What is the difference between an abstract base class and a concrete class?
+An abstract base class is a type of class whose member functions are purely virtual. (= 0).  What this means is that the deviced class is responsible for defining these inherited virtual functions from the abstract base class.
+
+A concrete class is basically the class that inherits from the abstract base class, and is reponsible for defining the pure virtual functions.  If not, then this class becomes an abstract class too, and will not allow instantiation.
+
+2. Why do we need to have a pure virtual function in a base class?
+
+From a design perspective, we need to have a pure virtual function in a base class because it suggests that the child classes that inherits from it has the same functionalities, in which their implementations are unique to their own.
+
+Example is the display function, in which all base class can have, but childA can display in multiple lines, wherease childB displays in one line, and childC displays the output, and then write into a file.
+
+The pure virtual function is a rule that says - every class that inherits MUST implement this funciton.
+
+
+3. Explain what have you learned in this workshop.
+I have learned that an abstract class cannot be instatiated, and that a class that inherits from an abstract class that DOESN'T implement the virtual functions will remain abstract and cannot be instatiated.
+
+I learned that a virtual destructor is a good design concept, as it will allow derived constructors to have their own implementations of a destructor too.

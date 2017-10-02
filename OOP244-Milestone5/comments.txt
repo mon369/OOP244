@@ -1,0 +1,9 @@
+First, I have created all the code myself, and the only time I have to look for external help is when I had to refer back to the OOP244 notes to clear myself out of confusion using the input functions and operators ( get, cin >>, getline), because I had to make sure the delimeters are tightly managed.  
+
+Throughout the development of Milestone 5, I have one specific goal in mind - and that's to code as little as possible to avoid duplication of codes.  This Milestone effectively utilizes the overloaded operators for input and output, so I no longer have the need to create the logic for them.
+
+To my best effort, I have contained my code in a way that no memory leaks happen, specifically when executing the showBill() function so that the temporary dynamic object is deleted everytime it loops through the m_billfile, and also during the addItem() function, if the item input is invalid, it has to be destroyed since we can't put it inside the m_items() array.
+
+Other than that, the Milestone 5 has been quite straightforward, as it puts in all the pieces together to make the entire program work, and I've had a lot of fun working on it.
+
+Thanks.

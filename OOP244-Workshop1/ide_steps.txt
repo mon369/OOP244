@@ -1,0 +1,10 @@
+How to create a console application in VS 2015:
+1. Click File
+2. New -> Project
+3. On the popup window: Select Visual C++
+4. Select Win32 from the drop down menu.
+5. Select Win32 Console Application Template.
+6. On the Console Application Wizard Window, Click Next
+7. Application Settings: Ensure that the Console Application type is selected.
+8. Additional options: you can uncheck "Precompiled headers" and "SDL checks", and choose to start an empty project.
+9. Click Finish.

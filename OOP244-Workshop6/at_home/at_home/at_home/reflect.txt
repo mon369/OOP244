@@ -1,0 +1,22 @@
+Create a file reflect.txt that contains the following:
+
+1) Explain why the copy assignment operator must check for self-assignment before doing anything else.
+  It is important for the copy assignment to check itself before doing anything else because if it doesnt, the code will crash and implode on it's own.  What I mean by this is that:
+
+If you are going to transfer B to A, and yet address A == address B, if your A object will need to delete any dynamic memory and set it to null, it will end up deleting itself, and thus the code will crash, or it may survive but it will not run as you'd expect it.
+
+
+2) Explain why a copy constructor and copy assignment operator are needed when a class uses dynamic memory allocation to hold its resources.
+
+They are needed so that each object that holds a resource is independent of other objects and the resources they hold.  The added benefit to this is so that it allows for not only shallow assignments but also deep copies.  When you're doing a shallow copy of an object such as:
+
+objA = objB
+
+The members get copied, but dynamically allocated members won't.  Only the pointer variable gets copied, but not the values inside them.
+
+Therefore, deep copying allows for independence of other objects, and to also have a better management of dynamic memory, and addresses, and to ensure that memory doesn't leak.
+
+
+3) Explain why is it important to avoid duplication of code and how did you accomplish it in this workshop.
+
+Avoiding duplication means having to write less codes that does more or less the same thing.  In this workshop, I avoided duplication by carefully modifying my copy constructor to directly call the assignment operator so that only one block of code can do resource copying instead of having to duplicate the codes over again.

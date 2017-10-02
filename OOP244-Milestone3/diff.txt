@@ -1,0 +1,10 @@
+
+In line number 12 of your output:
+The output should be:
+qty: 10
+But your output is: 
+qty: 1
+      ^
+------|
+Professor's character ASCII code: hex(30), dec(48)
+un-matched character ASCII code: hex(d), dec(13)

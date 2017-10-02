@@ -1,0 +1,21 @@
+1. In a file called reflect.txt and using examples from your own code explain which features of object orientation you used.
+
+Using the CreditCard class as an example, one of the features used in this workshop is the feature of privacy to ensure that member variables that stores Credit Card information such as m_creditCard, m_caredNumber and m_expiryYear are private and thus will not be accesible outside the class for direct modification, and the functions name(const char cardHolderName), initialize(unsigned long long cardNumber), write() and isValid(), are set to public so that the object instances can access them.  
+
+However, there are also examples in which private member functions - writeName() and writeCard() are used so that they can do "behind the scenes" activities that the outside code do not need to worry about.
+
+In summary, deciding whether a member function should be public or private is answered whether the object instance should have access to use them, or not.
+
+Another feature of Object Oriented is the ability to instantiate a class object using the syntax <Class name> <object name>.  The object is then used to access member variables and functions that are labeled as public, using the syntax <object>.<member_variable or member_function>.
+
+
+2. Explain your understanding of the do-while loop written in the main program, especially the condition that makes it stop. Also explain the choice of type for storing the credit card number.
+
+A do while loop is a type of loop that executes once before a condition is checked.
+In this workshop, a do-while loop asks the user to input his/her credit card information, then these values are initialized by the myCC.initialize(cardNumber, instCode, expiryYear, expiryMonth, backNumber), and the myCC.name(name) member functions in order for them to be validated by the myCC.isValid() member function as per the required conditions using the #define directives set.  
+
+If all of these values are valid, then the myCC.write() instruction will print out the credit card information entered on the console, and then the do/while loop will break.
+
+The condition states that the do-while loop will keep on going if myCC.isValid() returns false, and will print out an error message "Invalid input" on to the console.
+
+As per the choice of type for the storage of the credit card number, this number is a positive, 16-digit value in length, which means an unsigned int (16-bit), and an unsigned long (32-bit) are not appropriate to use for this type of number.  An unsigned long long on the other hand is at least 64-bits in size, which means it can hold up to 2^64 range of digit, which totals to +18446744073709551616, thus the appropriate choice for the type for storing the credit card number.

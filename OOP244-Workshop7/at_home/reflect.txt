@@ -1,0 +1,13 @@
+1. Why did we choose m_health to be a signed integer? (Hint: what happens if the Hero has a health of 1, and someone does 2 pointsof damage to them.)
+
+From a contexual perspective, health cannot go below 0.  It will not make sense.  If Hero A has a health of one and receives 2 points of damage, then it will go below 0.  This is why we chose m_health to be a signed integer, so we can have a check whether a Hero's health falls below 0, in which we set the health to 0 to tell that the Hero has died.
+
+2. Does the Hero class need to know about the existence of the class SuperHero? (Hint: do a search in Hero.cpp, does the word “SuperHero” appear anywhere in it?) How about the reverse, does SuperHero know about the Hero class?
+
+The Hero is the base class, and no it does not need to know the existence of SuperHero.
+On the other hand, the SuperHero class is a child/derived class of the base Hero class, therefore it needs to know the existence of Hero by inheriting through the Derived class : Base clss syntax.  This will enable the derived class to inherit the public methods of the base class, and also allow the passing of parameters to the constructor of the base class.
+
+3. The program prints out “AncientBattle!” when 2 Heros fight. It prints out “SuperFight!” when 2 SuperHeros fight. When you try to make a Hero fight a SuperHero, what did it print out?
+
+It prints out "AncientBattle!", because a SuperHero is a type of Hero, but a Hero isn't a SuperHero, as Hero is the base class.  This is the concept of plolymorphism, where a SuperHero can act as a Hero, but a Hero remains a Hero.
+

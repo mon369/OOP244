@@ -1,0 +1,54 @@
+1. What happens to dynamic memory if it is not deallocated?
+
+There are a number of things that can happen if dynamic memory is not deallocated.  First, a memory leak can happen: if the pointer to the dynamic memory goes out of scope before it is deallocated and set to null, of if the pointer to the dynamic memory is changed before deallocation.  This can result in a segmentation fault, where the address is out of the application scope.
+
+For example, if you allocated:
+
+int n;
+ClassA* pclassA = nullptr;
+cin >> n;
+pclassA = new pclassA[n];
+
+You must deallocate after using this memory:
+
+if (pclassA != nullptr){
+	delete [] pclassA;
+	pclassA = nullptr;
+}
+
+In some instances, if you accidentally set a loop to allocate dynamic memory such as this example:
+
+for(int i = 0; i < 1000; i++){
+	*pclassA = new pclassA[1000];
+}
+
+This will result in the application hogging up all the memory, if not deallocated.  This will allocate 1000 dynamic arrays consisting of 1000 elements each!
+
+Lastly, if you initialize a dynamic array, and didn't assign it as nullptr, it is going to be assigned an address that we do not use in the program.  This could lead to a segmentation fault because the address does not belong to our application:
+
+Kingdom* pKingdom; //This will be assigned an address that does not belong to our program, if we don't set it to a nullptr.
+
+
+
+2. What is the difference between dynamic memory and static memory?
+
+Static memory is a type of memory allocation that occurs during compile time in the stack.  Dynamic memory is a type of memory allocation that occurs during run-time in the heap.
+
+Static memory is a type of memory allocation that is pre-calculated by the compiler in order to set how much memory needs to be used in the stack.  For example:
+
+"int count = 0;" is a static memory allocation of at least 4 bytes by the compiler in the stack.
+
+"Kingdom* pKingdom = nullptr;
+...
+...
+...
+cin >> count;
+pKingdom = new pKingdom[count];" 
+
+This example above is a dynamic memory allocation because the allocation of pKingdom[count] happens during runtime, in the heap.
+
+3. In this workshop, I have learned to pay close attention to how I allocate and deallocate dynamic memory especially when it occurs at function scopes.
+
+I've learned how to pay close attention to the responsibility of scope when it comes to allocating and deallocating memory, as to adhere to good coding practices.
+
+And, lastly I have learned the syntax to declare class definitions, class variables, and class functions in header files, and how to define them on their respective implementation file.

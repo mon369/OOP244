@@ -1,0 +1,24 @@
+Script started on Wed 15 Mar 2017 12:00:48 PM EDT
+asinocencio@matrix:~/Milestone2> mw[[Ks2
+Linear: one two 
+As is: 
+one
+two
+
+Enter the folowing: 
+three<ENTER>
+four<ENTER>
+Ctrl-D
+
+three
+four
+one two three four 
+one
+two
+three
+four
+
+asinocencio@matrix:~/Milestone2> exit
+exit
+
+Script done on Wed 15 Mar 2017 12:01:16 PM EDT

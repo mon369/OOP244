@@ -1,0 +1,16 @@
+1.Discuss why operator+= should return a reference to Fraction.
+The operator+= should return a reference to Fraction, because the outside code, such as the main function needs to know the address of the object that invoked the operator function.
+
+And it makes sense from an equation perspective since the operator += is the equivalent of num = num + num2.
+
+The main needs to know where the address of that object so that the changes are appended and made in the same address => num = num + num2 => 10 = 10 + 1 => 11.
+
+2.In w5_in_lab.cpp (tester module), we calculated B+3 successfully. Explain how it is possible while we did not define the operator+ function for Fraction and integer.   
+
+The operator+ function receives a Fraction object as an argument, in which one of its overloaded constructor receives two integers (int n, int d= 1).  The d is a default argument with a value of 1 in case only the first variable was passed.  Therefore, when 6 is passed as an argument, the operator+ function automatically creates a temporary object in its parameters, and initialize this temporary object as 6/1.
+
+3.Explain what have you learned in this workshop.
+
+In this workshop, I learned the importance of knowing the mechanisms behind pointers and references and how they play in the concept of operator members.  For example, the operator+= function needs to return the reference using the "*this" notation.  What this means is that this keyword is the address of the current object itself, so in order for us to return the actual reference of this, we need to use the *this notation.
+
+By returning the reference of the current object, the outside code - main function - then knows which address to go back to so that the object's values can be changed. 

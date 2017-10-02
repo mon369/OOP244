@@ -1,0 +1,26 @@
+1) What is meant by a safe empty state? What other safe empty state you would choose for the type Passenger? Explain why.
+A safe empty state means that a member variable or function is set to a default initialized value and/or state, such as 0 or nullptr, from the time of an object's creation.  The empty state is until a setter function can set values for these empty variables.  It can also mean that a member function can display a "No data available" error message if the object is trying to access member variables that don't hold any value. Another case is a function to test a boolean function IsEmpty() before proceeding to the next set of instructions.  If IsEmpty returns true, then it will display an error message.
+
+This is so that the code does not break and behave as espected.
+
+
+2) Describe a case where having multiple constructors for the type Passenger would simplify the code of clients that use it.
+For example, a passenger may plan and purchase a ticket at a later date.  An overloaded constructor that takes a trip's date as  a paramter will set the dates month, day, year values.
+
+However, to simplify this even more, another constructor can only take the passenger's first and last name as a parameter and set the date to that day, if the flight is for that date only.  This can reduce the amount of parameters the client will enter into the code.
+
+3) Explain what have you learned in this workshop.
+
+A constructor initializes the default state of member variables of an object, while destructor is responsible for destroying these object states once it goes out of scope, or when the dynamic object is deallocated.
+
+A feature of C++11 called "delegating constructors" was introduced in order to reduce code redundancies and duplicates.  
+
+Constructor(): Constructor(arg1, arg2){
+}
+
+Constructor(arg1,arg2){
+m_arg1 = arg1;
+m_artg2 = arg2; 
+}
+
+What happens is that the default Constructor that takes no parameters can "call" and initialize the Constructor(arg1, arg2) to set default values, and in the workshop's case, set to empty state.  The idea is to let the most complex constructor overload do the heavy lifting and the workload, instead of all constructors doing the same amount of workload.

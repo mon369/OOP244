@@ -1,0 +1,22 @@
+Script started on Fri 27 Jan 2017 02:47:27 PM EST
+asinocencio@matrix:~/Workshop2> ws
+==========
+Input data
+==========
+Enter the number of kingdoms: 2
+Enter the name for kingdom #1: The_Vale
+Enter the number people living in The_Vale: 234567
+Enter the name for kingdom #2: The_Reach
+Enter the number people living in The_Reach: 567890
+==========
+
+------------------------------
+The first kingdom of Westeros
+------------------------------
+The_Vale, population 234567
+------------------------------
+
+asinocencio@matrix:~/Workshop2> exit
+exit
+
+Script done on Fri 27 Jan 2017 02:48:02 PM EST
